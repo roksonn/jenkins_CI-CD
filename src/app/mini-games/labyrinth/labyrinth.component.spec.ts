@@ -1,21 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { LabyrinthComponent } from './labyrinth.component';
+import { LabyrinthComponent } from "./labyrinth.component";
 
-describe('LabyrinthComponent', () => {
+describe("LabyrinthComponent", () => {
   let component: LabyrinthComponent;
   let fixture: ComponentFixture<LabyrinthComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LabyrinthComponent]
+      declarations: [LabyrinthComponent],
     });
     fixture = TestBed.createComponent(LabyrinthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
