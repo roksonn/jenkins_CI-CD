@@ -1,9 +1,0 @@
-import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
-
-@Component({
-  selector: 'app-start-page',
-  templateUrl: './start-page.component.html',
-  styleUrls: ['./start-page.component.css'],
-})
-export class StartPageComponent {}
