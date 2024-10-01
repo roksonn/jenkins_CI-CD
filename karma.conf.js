@@ -6,15 +6,11 @@ module.exports = function (config) {
     basePath: "",
     frameworks: ["jasmine", "@angular-devkit/build-angular"],
     plugins: [
-      require("core-js/es6/promise"),
       require("karma-jasmine"),
-      require("karma-ie-launcher"),
       require("karma-chrome-launcher"),
-      require("karma-firefox-launcher"),
       require("karma-jasmine-html-reporter"),
-      require("karma-coverage-istanbul-reporter"),
+      require("karma-coverage"),
       require("@angular-devkit/build-angular/plugins/karma"),
-      "karma-spec-reporter",
     ],
     client: {
       jasmine: {
@@ -34,7 +30,7 @@ module.exports = function (config) {
       reporters: [{ type: "html" }, { type: "text-summary" }],
     },
     reporters: ["progress", "kjhtml"],
-    browsers: ["Chrome", "Firefox"],
+    browsers: ["Chrome"],
     restartOnFileChange: true,
   });
 };
