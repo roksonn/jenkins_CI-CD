@@ -1,0 +1,24 @@
+<div
+  [ngStyle]="{
+    'background-image': 'url(../../assets/img/start-page.jpg)',
+    'background-repeat': 'no-repeat',
+    'background-position': 'center',
+    'background-size': 'cover'
+  }"
+>
+  <div class="container">
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      "
+    >
+      <h1 style="padding-top: 170px">Don't MES up!</h1>
+      <a class="btn-shine" routerLink="/game-select" (click)="shuffle()"
+        >Click to start!</a
+      >
+    </div>
+  </div>
+</div>

@@ -1,0 +1,155 @@
+<div
+  class="container"
+  [ngStyle]="{
+    'background-image': 'url(../../assets/img/keypads.jpg)',
+    'background-repeat': 'no-repeat',
+    'background-position': 'center',
+    'background-size': 'cover'
+  }"
+>
+  <div
+    style="
+      display: flex;
+      flex: 2;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: flex-start;
+      align-items: center;
+    "
+  >
+    <button routerLink="/game-select" class="back-button">Back</button>
+  </div>
+  <div style="display: flex; flex: 0.6; flex-direction: column; height: 100vh">
+    <div
+      style="
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h1>Keypads</h1>
+    </div>
+    <div class="cardboard-box-inner">
+      <div class="gameContainer">
+        <div style="display: flex">
+          <button
+            class="btn"
+            [value]="getItem(0)"
+            type="button"
+            (click)="checkSolution(button1)"
+            #button1
+          >
+            <textarea
+              name=""
+              id=""
+              cols="5"
+              rows="2"
+              style="
+                margin-bottom: 30px;
+                border: 1px solid black;
+                resize: none;
+                cursor: pointer;
+              "
+              disabled
+            ></textarea
+            ><span [innerHTML]="getItem(0)"> </span>
+          </button>
+          <button
+            class="btn"
+            [value]="getItem(1)"
+            type="button"
+            (click)="checkSolution(button2)"
+            #button2
+          >
+            <textarea
+              name=""
+              id=""
+              cols="5"
+              rows="2"
+              style="
+                margin-bottom: 30px;
+                border: 1px solid black;
+                resize: none;
+                cursor: pointer;
+              "
+              disabled
+            ></textarea>
+            <span [innerHTML]="getItem(1)"> </span>
+          </button>
+        </div>
+        <div style="display: flex">
+          <button
+            class="btn"
+            [value]="getItem(2)"
+            type="button"
+            (click)="checkSolution(button3)"
+            #button3
+          >
+            <textarea
+              name=""
+              id=""
+              cols="5"
+              rows="2"
+              style="
+                margin-bottom: 30px;
+                border: 1px solid black;
+                resize: none;
+                cursor: pointer;
+              "
+              disabled
+            ></textarea>
+            <span [innerHTML]="getItem(2)"> </span>
+          </button>
+          <button
+            class="btn"
+            [value]="getItem(3)"
+            type="button"
+            (click)="checkSolution(button4)"
+            #button4
+          >
+            <textarea
+              name=""
+              id=""
+              cols="5"
+              rows="2"
+              style="
+                margin-bottom: 30px;
+                border: 1px solid black;
+                resize: none;
+                cursor: pointer;
+              "
+              disabled
+            ></textarea>
+            <span [innerHTML]="getItem(3)"> </span>
+          </button>
+        </div>
+        <div>
+          <dialog id="my-dialog" #modal>
+            <p>{{ message }}</p>
+            <button (click)="closeModal()">OK</button>
+          </dialog>
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        flex: 2;
+        align-items: center;
+        justify-content: center;
+        scale: 100%;
+      "
+    >
+      <img
+        src="../../assets/img/cb-box.png"
+        alt=""
+        style="width: 194px; height: 160px"
+      />
+    </div>
+  </div>
+
+  <div style="display: flex; flex: 2; flex-direction: column; height: 100vh">
+    <div class="timer">Time left: {{ timerService.timeLeft }}</div>
+  </div>
+</div>

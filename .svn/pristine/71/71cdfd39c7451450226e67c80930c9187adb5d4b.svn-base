@@ -1,0 +1,210 @@
+<div
+  class="container"
+  [ngStyle]="{
+    'background-image': 'url(../../assets/img/keypads.jpg)',
+    'background-repeat': 'no-repeat',
+    'background-position': 'center',
+    'background-size': 'cover'
+  }"
+>
+  <div
+    style="
+      display: flex;
+      flex: 2;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: flex-start;
+      align-items: center;
+    "
+  >
+    <button routerLink="/game-select" class="back-button">Back</button>
+  </div>
+  <div style="display: flex; flex: 0.6; flex-direction: column; height: 100vh">
+    <div
+      style="
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div class="packing-label">
+        <div class="label-header">
+          <h2>Labirint</h2>
+        </div>
+        <div class="label-content">
+          <div>
+            <p class="label-from">From: Continental</p>
+            <p class="label-to">To: Digital Days</p>
+            <p class="label-address">Salzburg 8, Sibiu, Romania</p>
+          </div>
+          <div>
+            <img
+              src="../../../assets/img/qr-code.png"
+              alt=""
+              style="width: 70px; height: 70px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cardboard-box-inner">
+      <div class="gameContainer">
+        <div style="display: flex; flex-wrap: wrap">
+          <button
+            class="btn"
+            value="1"
+            type="button"
+            (click)="checkSolution(button1)"
+            #button1
+          ></button>
+
+          <button
+            class="btn"
+            value="2"
+            type="button"
+            (click)="checkSolution(button2)"
+            #button2
+          ></button>
+
+          <button
+            class="btn"
+            value="3"
+            type="button"
+            (click)="checkSolution(button3)"
+            #button3
+          ></button>
+
+          <button
+            class="btn"
+            value="4"
+            type="button"
+            (click)="checkSolution(button4)"
+            #button4
+          ></button>
+
+          <button
+            class="btn"
+            value="5"
+            type="button"
+            (click)="checkSolution(button5)"
+            #button5
+          ></button>
+
+          <button
+            class="btn"
+            value="6"
+            type="button"
+            (click)="checkSolution(button6)"
+            #button6
+          ></button>
+
+          <button
+            class="btn"
+            value="7"
+            type="button"
+            (click)="checkSolution(button7)"
+            #button7
+          ></button>
+
+          <button
+            class="btn"
+            value="8"
+            type="button"
+            (click)="checkSolution(button8)"
+            #button8
+          ></button>
+
+          <button
+            class="btn"
+            value="9"
+            type="button"
+            (click)="checkSolution(button9)"
+            #button9
+          ></button>
+
+          <button
+            class="btn"
+            value="10"
+            type="button"
+            (click)="checkSolution(button10)"
+            #button10
+          ></button>
+
+          <button
+            class="btn"
+            value="11"
+            type="button"
+            (click)="checkSolution(button11)"
+            #button11
+          ></button>
+
+          <button
+            class="btn"
+            value="12"
+            type="button"
+            (click)="checkSolution(button12)"
+            #button12
+          ></button>
+
+          <button
+            class="btn"
+            value="13"
+            type="button"
+            (click)="checkSolution(button13)"
+            #button13
+          ></button>
+
+          <button
+            class="btn"
+            value="14"
+            type="button"
+            (click)="checkSolution(button14)"
+            #button14
+          ></button>
+
+          <button
+            class="btn"
+            value="15"
+            type="button"
+            (click)="checkSolution(button15)"
+            #button15
+          ></button>
+
+          <button
+            class="btn"
+            value="16"
+            type="button"
+            (click)="checkSolution(button16)"
+            #button16
+          ></button>
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <img
+        src="../../assets/img/cb-box.png"
+        alt=""
+        style="width: 194px; height: 160px"
+      />
+    </div>
+  </div>
+
+  <div style="display: flex; flex: 2; flex-direction: column; height: 100vh">
+    <div class="timer">Time left: {{ timerService.timeLeft }}</div>
+  </div>
+</div>
+
+<dialog #modal>
+  <div class="modal">
+    <p>{{ message }}</p>
+    <button (click)="closeModal()" class="modal-btn">OK</button>
+  </div>
+</dialog>

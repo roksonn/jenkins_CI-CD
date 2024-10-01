@@ -1,0 +1,11 @@
+import { Component } from '@angular/core';
+import { TimerService } from 'src/app/services/timer.service';
+
+@Component({
+  selector: 'app-who-is-first',
+  templateUrl: './who-is-first.component.html',
+  styleUrls: ['./who-is-first.component.css'],
+})
+export class WhoIsFirstComponent {
+  constructor(public timerService: TimerService) {}
+}

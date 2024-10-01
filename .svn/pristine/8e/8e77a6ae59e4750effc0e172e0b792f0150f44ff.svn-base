@@ -1,0 +1,150 @@
+<div
+  class="container"
+  [ngStyle]="{
+    'background-image': 'url(../../assets/img/keypads.jpg)',
+    'background-repeat': 'no-repeat',
+    'background-position': 'center',
+    'background-size': 'cover'
+  }"
+>
+  <div
+    style="display: flex; flex: 2; flex-direction: column; height: 100vh"
+  ></div>
+  <div style="display: flex; flex: 0.6; flex-direction: column; height: 100vh">
+    <div
+      style="
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h1>Keypads</h1>
+    </div>
+    <div class="cardboard-box-inner">
+      <div
+        style="
+          padding: 5em;
+          background: #ddddd8;
+          border-bottom: 6px inset rgba(0, 0, 0, 0.5);
+          border-left: 6px inset rgba(0, 0, 0, 0.5);
+          border-right: 6px inset rgba(255, 255, 255, 0.5);
+          border-top: 6px inset rgba(255, 255, 255, 0.5);
+          box-sizing: border-box;
+        "
+      >
+        <div style="display: flex">
+          <button
+            class="btn"
+            value="1"
+            type="button"
+            (click)="checkSolution(button1)"
+            #button1
+          >
+            <textarea
+              name=""
+              id=""
+              cols="5"
+              rows="2"
+              style="
+                margin-bottom: 30px;
+                border: 1px solid black;
+                resize: none;
+                cursor: pointer;
+              "
+              disabled
+            ></textarea>
+            Button 1
+          </button>
+          <button
+            class="btn"
+            value="2"
+            type="button"
+            (click)="checkSolution(button2)"
+            #button2
+          >
+            <textarea
+              name=""
+              id=""
+              cols="5"
+              rows="2"
+              style="
+                margin-bottom: 30px;
+                border: 1px solid black;
+                resize: none;
+                cursor: pointer;
+              "
+              disabled
+            ></textarea>
+            Button 2
+          </button>
+        </div>
+        <div style="display: flex">
+          <button
+            class="btn"
+            value="3"
+            type="button"
+            (click)="checkSolution(button3)"
+            #button3
+          >
+            <textarea
+              name=""
+              id=""
+              cols="5"
+              rows="2"
+              style="
+                margin-bottom: 30px;
+                border: 1px solid black;
+                resize: none;
+                cursor: pointer;
+              "
+              disabled
+            ></textarea>
+            Button 3
+          </button>
+          <button
+            class="btn"
+            value="4"
+            type="button"
+            (click)="checkSolution(button4)"
+            #button4
+          >
+            <textarea
+              name=""
+              id=""
+              cols="5"
+              rows="2"
+              style="
+                margin-bottom: 30px;
+                border: 1px solid black;
+                resize: none;
+                cursor: pointer;
+              "
+              disabled
+            ></textarea>
+            Button 4
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        flex: 2;
+        align-items: center;
+        justify-content: center;
+        scale: 100%;
+      "
+    >
+      <img
+        src="../../assets/img/cb-box.png"
+        alt=""
+        style="width: 194px; height: 160px"
+      />
+    </div>
+  </div>
+
+  <div style="display: flex; flex: 2; flex-direction: column; height: 100vh">
+    <div class="timer">Time left: {{ timerService.timeLeft }}</div>
+  </div>
+</div>

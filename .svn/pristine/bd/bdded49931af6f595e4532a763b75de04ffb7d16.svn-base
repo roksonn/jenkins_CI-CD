@@ -1,0 +1,66 @@
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { TimerService } from '../../services/timer.service';
+
+@Component({
+  selector: 'app-button',
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.css'],
+})
+export class ButtonComponent implements OnInit {
+  @ViewChild('hold') holdButton!: HTMLButtonElement;
+  @ViewChild('strip') strip!: ElementRef;
+
+  checkedToggle: boolean = false;
+  checkedButton: boolean = false;
+  checkedStrip: boolean = false;
+
+  constructor(public timerService: TimerService) {}
+
+  ngOnInit(): void {
+    // this.timerService.ngOnInit();
+  }
+
+  toggle() {
+    this.checkedToggle = !this.checkedToggle;
+    this.checkedStrip = !this.checkedStrip;
+    this.checkedButton = !this.checkedButton;
+
+    this.strip.nativeElement.classList.remove(
+      ...this.strip.nativeElement.classList
+    );
+    this.strip.nativeElement.classList.add(
+      `vertical${Math.floor(Math.random() * 3) + 1}`
+    );
+  }
+
+  holdClick() {
+    console.log(this.strip.nativeElement);
+    if (this.strip.nativeElement.classList[0] === 'vertical1') {
+      if (
+        (this.timerService.minutes + '').includes('7') ||
+        (this.timerService.seconds + '').includes('7')
+      ) {
+        alert('bv sefukle');
+        this.checkedButton = !this.checkedButton;
+      }
+    }
+    if (this.strip.nativeElement.classList[0] === 'vertical2') {
+      if (
+        (this.timerService.minutes + '').includes('3') ||
+        (this.timerService.seconds + '').includes('3')
+      ) {
+        alert('bv sefukle');
+        this.checkedButton = !this.checkedButton;
+      }
+    }
+    if (this.strip.nativeElement.classList[0] === 'vertical3') {
+      if (
+        (this.timerService.minutes + '').includes('5') ||
+        (this.timerService.seconds + '').includes('5')
+      ) {
+        alert('bv sefukle');
+        this.checkedButton = !this.checkedButton;
+      }
+    }
+  }
+}

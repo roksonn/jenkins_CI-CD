@@ -1,0 +1,78 @@
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+declare var LeaderLine: any;
+
+@Component({
+  selector: 'app-wires',
+  templateUrl: './wires.component.html',
+  styleUrls: ['./wires.component.css'],
+})
+export class WiresComponent {
+  buttonsPressed: HTMLButtonElement[] = [];
+  lines: any[] = [];
+  solution: any = [];
+
+  constructor(private router: Router, private http: HttpClient) {
+    router.events.subscribe((val) => {
+      this.clearArray();
+    });
+  }
+
+  drawLine(point: HTMLButtonElement) {
+    if (this.buttonsPressed.length == 1) {
+      this.buttonsPressed.push(point);
+      console.log(this.buttonsPressed);
+      if (
+        (!this.buttonsPressed[0].classList.contains('firstColumn') &&
+          !this.buttonsPressed[1].classList.contains('secondColumn')) ||
+        (!this.buttonsPressed[0].classList.contains('secondColumn') &&
+          !this.buttonsPressed[1].classList.contains('firstColumn'))
+      ) {
+        const line = new LeaderLine(
+          this.buttonsPressed[0],
+          this.buttonsPressed[1]
+        );
+        this.lines.push(line);
+
+        this.solution[Number(this.buttonsPressed[1].id)] =
+          this.buttonsPressed[0].value;
+        console.log(this.solution);
+
+        this.buttonsPressed.length = 0;
+      } else {
+        this.buttonsPressed.length = 0;
+      }
+    } else {
+      this.buttonsPressed.push(point);
+    }
+  }
+
+  clearArray() {
+    this.buttonsPressed.length = 0;
+    this.lines.forEach((element) => {
+      element.remove();
+    });
+    this.lines.length = 0;
+  }
+
+  submit() {
+    this.solution.shift();
+    if (this.solution.length === 4) {
+      console.log(this.solution);
+      this.http
+        .post(`https://suas206-vm.su.ro.conti.de:36299/WireRightOrder`, {
+          input: this.solution,
+        })
+        .subscribe({
+          next: (response) => {
+            console.log(response);
+          },
+          error: (error) => {
+            console.log(error);
+          },
+        });
+    }
+  }
+}

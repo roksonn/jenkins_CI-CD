@@ -1,0 +1,10 @@
+.btn-menu {
+  font-family: "Aldrich", Helvetica, sans-serif;
+  width: 150px;
+  height: 50px;
+  border-radius: 0px;
+  font-size: large;
+  color: aliceblue;
+  background-color: rgb(89, 28, 146);
+  outline: 5px solid blueviolet;
+}

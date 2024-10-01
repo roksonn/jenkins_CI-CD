@@ -1,0 +1,122 @@
+<div
+  class="container"
+  [ngStyle]="{
+    'background-image': 'url(../../assets/img/wires.jpg)',
+    'background-repeat': 'no-repeat',
+    'background-position': 'center',
+    'background-size': 'cover'
+  }"
+>
+  <div
+    style="display: flex; flex: 2; flex-direction: column; height: 100vh"
+  ></div>
+  <div style="display: flex; flex: 0.6; flex-direction: column; height: 100vh">
+    <div
+      style="
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h1>Who is first?</h1>
+    </div>
+    <div class="cardboard-box-inner">
+      <div class="gameContainer">
+        <div style="display: flex; gap: 250px">
+          <button
+            class="firstColumn btn-menu"
+            value="unitCheckin"
+            #option1
+            (click)="drawLine(option1)"
+          >
+            Unit Checkin
+          </button>
+          <button
+            class="secondColumn btn-menu"
+            #first
+            id="1"
+            (click)="drawLine(first)"
+          >
+            1
+          </button>
+        </div>
+        <div style="display: flex; gap: 250px">
+          <button
+            class="firstColumn btn-menu"
+            value="unitCheckout"
+            #option2
+            (click)="drawLine(option2)"
+          >
+            Unit Chekout
+          </button>
+          <button
+            class="secondColumn btn-menu"
+            #second
+            id="2"
+            (click)="drawLine(second)"
+          >
+            2
+          </button>
+        </div>
+        <div style="display: flex; gap: 250px">
+          <button
+            class="firstColumn btn-menu"
+            value="ping"
+            #option3
+            (click)="drawLine(option3)"
+          >
+            Ping
+          </button>
+          <button
+            class="secondColumn btn-menu"
+            #third
+            id="3"
+            (click)="drawLine(third)"
+          >
+            3
+          </button>
+        </div>
+        <div style="display: flex; gap: 250px">
+          <button
+            class="firstColumn btn-menu"
+            value="identification"
+            #option4
+            (click)="drawLine(option4)"
+          >
+            Identification
+          </button>
+          <button
+            class="secondColumn btn-menu"
+            #fourth
+            id="4"
+            (click)="drawLine(fourth)"
+          >
+            4
+          </button>
+        </div>
+        <button class="btn-menu" (click)="clearArray()">Clear</button>
+        <button class="btn-menu" (click)="submit()">Submit</button>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        flex: 2;
+        align-items: center;
+        justify-content: center;
+        scale: 100%;
+      "
+    >
+      <img
+        src="../../assets/img/cb-box.png"
+        alt=""
+        style="width: 194px; height: 160px"
+      />
+    </div>
+  </div>
+
+  <div style="display: flex; flex: 2; flex-direction: column; height: 100vh">
+    <div class="timer">Time left: {{ timerService.timeLeft }}</div>
+  </div>
+</div>

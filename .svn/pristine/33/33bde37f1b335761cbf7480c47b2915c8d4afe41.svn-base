@@ -1,0 +1,28 @@
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { TimerService } from 'src/app/services/timer.service';
+import { Resp } from '../keypads/keypads.component';
+
+@Component({
+  selector: 'app-who-is-first',
+  templateUrl: './who-is-first.component.html',
+  styleUrls: ['./who-is-first.component.css'],
+})
+export class WhoIsFirstComponent implements OnInit {
+  displayWord!: string;
+
+  constructor(public timerService: TimerService, private http: HttpClient) {}
+
+  async ngOnInit() {
+    await this.http
+      .get('https://suas206-vm.su.ro.conti.de:36299/getWord')
+      .subscribe({
+        next: (response: Resp | any) => {
+          this.displayWord = response.text;
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
+  }
+}

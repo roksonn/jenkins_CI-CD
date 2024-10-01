@@ -1,0 +1,134 @@
+/* * {
+  border: 10px black;
+  border-style: dotted;
+} */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.gameContainer {
+  padding: 5em;
+  background: #ddddd8;
+  border-bottom: 6px inset rgba(0, 0, 0, 0.5);
+  border-left: 6px inset rgba(0, 0, 0, 0.5);
+  border-right: 6px inset rgba(255, 255, 255, 0.5);
+  border-top: 6px inset rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  min-width: 580px;
+}
+
+.btn {
+  font-family: "Aldrich", Helvetica, sans-serif;
+  background: #ffecc5;
+  border-bottom: 6px inset rgba(0, 0, 0, 0.5);
+  border-left: 6px inset rgba(0, 0, 0, 0.5);
+  border-right: 6px inset rgba(255, 255, 255, 0.5);
+  border-top: 6px inset rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  min-width: 100px;
+  padding: 0.5rem;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+.btn:focus,
+.btn:hover {
+  background: #e6d2ab;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+}
+
+.btn:disabled {
+  background: #dbdbdb;
+  cursor: default;
+  transform: translate(0px, 0px);
+}
+
+.btn-pressed {
+  background-color: red;
+}
+
+.solution-correct {
+  background-color: lime;
+}
+
+.btn-reset {
+  background-color: white;
+}
+
+.back-button {
+  font-family: "Aldrich", Helvetica, sans-serif;
+  background-color: white;
+  color: black;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+  margin-top: 50px;
+}
+
+.back-button:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+}
+
+.back-button:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  font-size: x-large;
+  align-items: center;
+}
+
+.packing-label {
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.label-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.label-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #ffa500; /* Blue color for the header */
+}
+
+.label-content {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.label-from,
+.label-to {
+  margin: 0;
+  font-weight: bold;
+}
+
+.label-address {
+  margin: 0;
+}

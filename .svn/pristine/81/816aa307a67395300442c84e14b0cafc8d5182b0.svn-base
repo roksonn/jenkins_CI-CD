@@ -1,0 +1,29 @@
+import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
+import { TimerService } from '../services/timer.service';
+
+interface Scenario {
+  title: string;
+  minigames: { game: string; solved: boolean }[];
+}
+
+@Component({
+  selector: 'app-game-select',
+  templateUrl: './game-select.component.html',
+  styleUrls: ['./game-select.component.css'],
+})
+export class GameStartComponent implements OnInit {
+  selectedScenario!: Scenario;
+  isFullscreen!: string;
+
+  constructor(public timerService: TimerService) {}
+
+  ngOnInit(): void {
+    this.selectedScenario = AppComponent.scenarios[0];
+    // this.timerService.ngOnInit();
+    this.timerService.startTimer();
+    this.isFullscreen =
+      window.innerHeight == screen.height ? 'desktop2' : 'desktop';
+    console.log(this.isFullscreen);
+  }
+}

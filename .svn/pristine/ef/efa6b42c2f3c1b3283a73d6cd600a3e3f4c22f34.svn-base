@@ -1,0 +1,18 @@
+<div class="container">
+  <div style="display: flex; gap: 15px">
+    <button value="1" type="button" (click)="checkSolution(button1)" #button1>
+      Button 1
+    </button>
+    <button value="2" type="button" (click)="checkSolution(button2)" #button2>
+      Button 2
+    </button>
+  </div>
+  <div style="display: flex; gap: 15px">
+    <button value="3" type="button" (click)="checkSolution(button3)" #button3>
+      Button 3
+    </button>
+    <button value="4" type="button" (click)="checkSolution(button4)" #button4>
+      Button 4
+    </button>
+  </div>
+</div>

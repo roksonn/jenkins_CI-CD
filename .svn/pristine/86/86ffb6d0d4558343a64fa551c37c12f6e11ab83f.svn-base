@@ -1,0 +1,32 @@
+<div
+  style="
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+  "
+  [ngStyle]="{
+    'background-image': 'url(../../assets/img/winner.jpg)',
+    'background-repeat': 'no-repeat',
+    'background-position': 'center',
+    'background-size': 'cover'
+  }"
+>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 50px;
+    "
+  >
+    <h2>Double trouble?</h2>
+    <div style="display: flex; gap: 10px; justify-content: center">
+      <button routerLink="/trivia">Yes</button>
+      <button routerLink="/start">No</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+/* * {
+  border: 1px solid black;
+  border-style: dashed;
+} */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scenarioTitle {
+  font-size: x-large;
+  text-align: center;
+  text-shadow: 2px 5px #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.issuesList {
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+}
+
+.conveyor-belt {
+  background: linear-gradient(0deg, #888 25%, transparent 25%),
+    linear-gradient(0deg, transparent 75%, #888 75%),
+    linear-gradient(0deg, transparent 75%, #888 75%),
+    linear-gradient(0deg, #888 25%, transparent 25%);
+  background-size: 100% 40px, 100% 40px, 100% 40px, 100% 40px;
+  background-position: 0 0, 0 10px, 0 20px, 0 30px;
+  background-repeat: repeat-y;
+  animation: conveyor-belt-animation 2s linear infinite;
+  width: 250px;
+  height: auto;
+}
+
+@keyframes conveyor-belt-animation {
+  to {
+    background-position: 0 40px, 0 50px, 0 60px, 0 70px;
+  }
+}
+
+.cardboard-button {
+  font-family: "Aldrich", Helvetica, sans-serif;
+  display: inline-block;
+  height: 100px;
+  width: 180px;
+  padding: 10px 20px;
+  background-color: #f4e6d9;
+  border: 1px solid #d9b38c;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  color: #7c5f4a;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.cardboard-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    #b8a88b 5px,
+    #b8a88b 10px
+  );
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.cardboard-button:hover {
+  transform: translateX(5px);
+}
+
+.cardboard-button:hover:before {
+  transform: translateX(0);
+}

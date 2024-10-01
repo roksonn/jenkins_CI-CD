@@ -1,0 +1,45 @@
+import { Injectable } from '@angular/core';
+// import { Observable, Subscription, interval } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class TimerService {
+  constructor() {}
+
+  initialTime: number = 120;
+  timeLeft: any;
+  interval: any;
+  isStarted = false;
+  minutes!: number;
+  seconds!: number;
+
+  startTimer() {
+    if (!this.isStarted) {
+      this.isStarted = true;
+      this.interval = setInterval(() => {
+        if (this.initialTime > 0) {
+          this.initialTime--;
+        } else {
+          alert('Aoleu');
+          this.pauseTimer();
+        }
+        this.timeLeft = this.transform(this.initialTime);
+      }, 1000);
+    }
+  }
+
+  transform(value: number): string {
+    this.minutes = Math.floor(value / 60);
+    this.seconds = value - this.minutes * 60;
+    return `${this.minutes}:${this.seconds < 10 ? '0' : ''}${this.seconds}`;
+  }
+
+  pauseTimer() {
+    clearInterval(this.interval);
+  }
+
+  resetTimer() {
+    this.initialTime = 120;
+  }
+}

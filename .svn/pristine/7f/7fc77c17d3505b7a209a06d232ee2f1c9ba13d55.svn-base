@@ -1,0 +1,96 @@
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { GameStatusService } from '../../services/game-status.service';
+import { TimerService } from '../../services/timer.service';
+@Component({
+  selector: 'app-button',
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.css'],
+})
+export class ButtonComponent implements OnInit {
+  @ViewChild('hold') holdButton!: HTMLButtonElement;
+  @ViewChild('strip') strip!: ElementRef;
+
+  checkedToggle: boolean = false;
+  checkedButton: boolean = false;
+  checkedName: boolean = false;
+
+  lines: string[] = ['SP21', 'PSA_BSRF', 'BCM_PAG', 'PIU/PCU', 'AUDI_DCM'];
+
+  randomLine: string = 'test';
+
+  constructor(
+    public timerService: TimerService,
+    private gameSolved: GameStatusService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    // this.timerService.ngOnInit();
+  }
+
+  toggle() {
+    this.checkedToggle = !this.checkedToggle;
+    this.checkedName = !this.checkedName;
+    this.checkedButton = !this.checkedButton;
+
+    this.randomLine = this.lines[Math.floor(Math.random() * 5)];
+  }
+
+  holdClick() {
+    if (this.randomLine === 'SP21') {
+      if (
+        (this.timerService.minutes + '').includes('3') ||
+        (this.timerService.seconds + '').includes('3')
+      ) {
+        alert('bv sefukle');
+        this.router.navigate(['/game']);
+        this.gameSolved.gameSolved.emit({ game: '/button', solved: true });
+      }
+    }
+
+    if (this.randomLine === 'PSA_BSRF') {
+      if (
+        (this.timerService.minutes + '').includes('3') ||
+        (this.timerService.seconds + '').includes('3')
+      ) {
+        alert('bv sefukle');
+        this.router.navigate(['/game']);
+        this.gameSolved.gameSolved.emit({ game: '/button', solved: true });
+      }
+    }
+
+    if (this.randomLine === 'BCM_PAG') {
+      if (
+        (this.timerService.minutes + '').includes('3') ||
+        (this.timerService.seconds + '').includes('3')
+      ) {
+        alert('bv sefukle');
+        this.router.navigate(['/game']);
+        this.gameSolved.gameSolved.emit({ game: '/button', solved: true });
+      }
+    }
+
+    if (this.randomLine === 'PIU/PCU') {
+      if (
+        (this.timerService.minutes + '').includes('3') ||
+        (this.timerService.seconds + '').includes('3')
+      ) {
+        alert('bv sefukle');
+        this.router.navigate(['/game']);
+        this.gameSolved.gameSolved.emit({ game: '/button', solved: true });
+      }
+    }
+
+    if (this.randomLine === 'AUDI_DCM') {
+      if (
+        (this.timerService.minutes + '').includes('3') ||
+        (this.timerService.seconds + '').includes('3')
+      ) {
+        alert('bv sefukle');
+        this.router.navigate(['/game']);
+        this.gameSolved.gameSolved.emit({ game: '/button', solved: true });
+      }
+    }
+  }
+}

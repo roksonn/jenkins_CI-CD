@@ -1,0 +1,28 @@
+<div class="container">
+  <div style="flex: 1.3; background-color: darkred">
+    <p>Something Here too</p>
+    <div class="timer">
+      <h4>Count down timer</h4>
+      <span style="margin-left: 10px">{{ timerService.timeLeft }}</span>
+    </div>
+  </div>
+  <div class="gameContainer">
+    <div style="display: flex">
+      <button [disabled]="!checked" #hold (click)="holdClick()">Hold</button>
+      <div class="toggle-button-cover">
+        <div class="button r" id="button-3">
+          <input
+            type="checkbox"
+            class="checkbox"
+            (click)="toggle()"
+            [hidden]="checked"
+          />
+          <div class="knobs"></div>
+          <div class="layer"></div>
+        </div>
+      </div>
+      <div [hidden]="!checked" #strip></div>
+    </div>
+  </div>
+  <div style="flex: 1.3; background-color: darkred"><p>Something Here</p></div>
+</div>

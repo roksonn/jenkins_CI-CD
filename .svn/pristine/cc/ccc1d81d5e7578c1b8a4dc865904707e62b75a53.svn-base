@@ -1,0 +1,112 @@
+<div class="container">
+  <div style="flex: 1.3; background-color: darkred"><p>Something Here</p></div>
+  <div class="buttonContainer">
+    <div style="display: flex">
+      <div class="arranged">
+        <a>
+          <span
+            class="arrow up"
+            (click)="lastL(this.firstColumn)"
+            #upButtonFirstColumn
+          ></span>
+        </a>
+        <button class="btn" #middleButtonFirstColumn>
+          {{ this.firstColumn.letters[firstColumn.currentIndex] }}
+        </button>
+        <a
+          ><span
+            class="arrow down"
+            (click)="nextL(this.firstColumn)"
+            #downButtonFirstColumn
+          ></span>
+        </a>
+      </div>
+      <div class="arranged">
+        <a
+          ><span
+            class="arrow up"
+            (click)="lastL(this.secondColumn)"
+            #upButtonSecondColumn
+          ></span
+        ></a>
+        <button class="btn" #middleButtonSecondColumn>
+          {{ this.secondColumn.letters[secondColumn.currentIndex] }}
+        </button>
+        <a
+          ><span
+            class="arrow down"
+            (click)="nextL(this.secondColumn)"
+            #downButtonSecondColumn
+          ></span
+        ></a>
+      </div>
+      <div class="arranged">
+        <a
+          ><span
+            class="arrow up"
+            (click)="lastL(this.thirdColumn)"
+            #upButtonThirdColumn
+          ></span
+        ></a>
+        <button class="btn" #middleButtonThirdColumn>
+          {{ this.thirdColumn.letters[thirdColumn.currentIndex] }}
+        </button>
+
+        <a
+          ><span
+            class="arrow down"
+            (click)="nextL(this.thirdColumn)"
+            #downButtonThirdColumn
+          ></span
+        ></a>
+      </div>
+      <div class="arranged">
+        <a
+          ><span
+            class="arrow up"
+            (click)="lastL(this.fourthColumn)"
+            #upButtonFourthColumn
+          ></span
+        ></a>
+        <button class="btn" #middleButtonFourthColumn>
+          {{ this.fourthColumn.letters[fourthColumn.currentIndex] }}
+        </button>
+
+        <a
+          ><span
+            class="arrow down"
+            (click)="nextL(this.fourthColumn)"
+            #downButtonFourthColumn
+          ></span
+        ></a>
+      </div>
+      <div class="arranged">
+        <a
+          ><span
+            class="arrow up"
+            (click)="lastL(this.fifthColumn)"
+            #upButtonFifthColumn
+          ></span
+        ></a>
+
+        <button class="btn" #middleButtonFifthColumn>
+          {{ this.fifthColumn.letters[fifthColumn.currentIndex] }}
+        </button>
+
+        <a
+          ><span
+            class="arrow down"
+            (click)="nextL(this.fifthColumn)"
+            #downButtonFifthColumn
+          ></span
+        ></a>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-submit" (click)="submit()">Submit</button>
+    </div>
+  </div>
+  <div style="flex: 1.3; background-color: darkred">
+    <p>Something Here too</p>
+  </div>
+</div>

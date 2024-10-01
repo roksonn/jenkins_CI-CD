@@ -1,0 +1,26 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { StartPageComponent } from './start-page/start-page.component';
+import { GameStartComponent } from './game-start/game-start.component';
+import { KeypadsComponent } from './mini-games/keypads/keypads.component';
+import { WiresComponent } from './mini-games/wires/wires.component';
+import { PasswordsComponent } from './mini-games/passwords/passwords.component';
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    StartPageComponent,
+    GameStartComponent,
+    KeypadsComponent,
+    WiresComponent,
+    PasswordsComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}

@@ -1,0 +1,24 @@
+.btn-menu {
+  font-family: "Aldrich", Helvetica, sans-serif;
+  width: 150px;
+  height: 50px;
+  border-radius: 0px;
+  font-size: large;
+  color: aliceblue;
+  background-color: rgb(89, 28, 146);
+  outline: 5px solid blueviolet;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}

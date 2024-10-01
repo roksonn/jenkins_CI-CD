@@ -1,0 +1,26 @@
+import { Component, OnInit } from '@angular/core';
+import { TimerService } from '../services/timer.service';
+import { StartPageComponent } from '../start-page/start-page.component';
+
+interface Scenario {
+  title: string;
+  minigames: { game: string; solved: boolean }[];
+}
+
+@Component({
+  selector: 'app-game-select',
+  templateUrl: './game-select.component.html',
+  styleUrls: ['./game-select.component.css'],
+})
+export class GameStartComponent implements OnInit {
+  selectedScenario!: Scenario;
+  isFullscreen!: string;
+
+  constructor(public timerService: TimerService) {}
+
+  ngOnInit(): void {
+    this.selectedScenario =
+      StartPageComponent.scenarios[StartPageComponent.rand];
+    this.timerService.startTimer();
+  }
+}

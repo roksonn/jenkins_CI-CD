@@ -1,0 +1,20 @@
+import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
+
+interface Scenario {
+  title: string;
+  minigames: { game: string; solved: boolean }[];
+}
+
+@Component({
+  selector: 'app-game-start',
+  templateUrl: './game-start.component.html',
+  styleUrls: ['./game-start.component.css'],
+})
+export class GameStartComponent implements OnInit {
+  selectedScenario!: Scenario;
+
+  ngOnInit(): void {
+    this.selectedScenario = AppComponent.scenarios[0];
+  }
+}

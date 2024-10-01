@@ -1,0 +1,24 @@
+<div
+  style="
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <h1>You are out of time!</h1>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    "
+  >
+    <div style="display: flex; gap: 10px; justify-content: center">
+      <button routerLink="/start">Restart</button>
+    </div>
+  </div>
+</div>

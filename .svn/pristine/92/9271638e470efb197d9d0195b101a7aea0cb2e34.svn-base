@@ -1,0 +1,45 @@
+<div class="container">
+  <ol style="margin-left: 50px">
+    <li>
+      <div class="question">
+        <p>{{ question1.question }}</p>
+        <ol type="a">
+          <li *ngFor="let answer of question1.answers">{{ answer }}</li>
+        </ol>
+      </div>
+    </li>
+    <li>
+      <div class="question">
+        <p>{{ question2.question }}</p>
+        <ol type="a">
+          <li *ngFor="let answer of question1.answers">{{ answer }}</li>
+        </ol>
+      </div>
+    </li>
+    <li>
+      <div class="question">
+        <p>{{ question3.question }}</p>
+        <ol type="a">
+          <li *ngFor="let answer of question1.answers">{{ answer }}</li>
+        </ol>
+      </div>
+    </li>
+    <li>
+      <div class="question">
+        <p>{{ question4.question }}</p>
+        <ol type="a">
+          <li *ngFor="let answer of question1.answers">{{ answer }}</li>
+        </ol>
+      </div>
+    </li>
+    <li>
+      <div class="question">
+        <p>{{ question5.question }}</p>
+        <ol type="a">
+          <li *ngFor="let answer of question1.answers">{{ answer }}</li>
+        </ol>
+      </div>
+    </li>
+    <button routerLink="/start" class="back-button">Back to start</button>
+  </ol>
+</div>

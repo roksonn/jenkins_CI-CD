@@ -1,0 +1,90 @@
+<div style="display: flex">
+  <div>
+    <button
+      class="under up-arrow"
+      (click)="lastL(this.firstColumn)"
+      value="1"
+      #upButtonFirstColumn
+    ></button>
+    <button class="under" value="1" #middleButtonFirstColumn>
+      {{ this.firstColumn.letters[firstColumn.currentIndex] }}
+    </button>
+    <button
+      class="under down-arrow"
+      value="2"
+      (click)="nextL(this.firstColumn)"
+      #downButtonFirstColumn
+    ></button>
+  </div>
+  <div>
+    <button
+      class="under up-arrow"
+      (click)="lastL(this.secondColumn)"
+      value="1"
+      #upButtonSecondColumn
+    ></button>
+    <button class="under" value="1" #middleButtonSecondColumn>
+      {{ this.secondColumn.letters[secondColumn.currentIndex] }}
+    </button>
+    <button
+      class="under down-arrow"
+      value="2"
+      (click)="nextL(this.secondColumn)"
+      #downButtonSecondColumn
+    ></button>
+  </div>
+  <div>
+    <button
+      class="under up-arrow"
+      (click)="lastL(this.thirdColumn)"
+      value="1"
+      #upButtonThirdColumn
+    ></button>
+    <button class="under" value="1" #middleButtonThirdColumn>
+      {{ this.thirdColumn.letters[thirdColumn.currentIndex] }}
+    </button>
+    <button
+      class="under down-arrow"
+      value="2"
+      (click)="nextL(this.thirdColumn)"
+      #downButtonThirdColumn
+    ></button>
+  </div>
+  <div>
+    <button
+      class="under up-arrow"
+      (click)="lastL(this.fourthColumn)"
+      value="1"
+      #upButtonFourthColumn
+    ></button>
+    <button class="under" value="1" #middleButtonFourthColumn>
+      {{ this.fourthColumn.letters[fourthColumn.currentIndex] }}
+    </button>
+    <button
+      class="under down-arrow"
+      value="2"
+      (click)="nextL(this.fourthColumn)"
+      #downButtonFourthColumn
+    ></button>
+  </div>
+  <div>
+    <button
+      class="under up-arrow"
+      (click)="lastL(this.fifthColumn)"
+      value="1"
+      #upButtonFifthColumn
+    ></button>
+    <button class="under" value="1" #middleButtonFifthColumn>
+      {{ this.fifthColumn.letters[fifthColumn.currentIndex] }}
+    </button>
+    <button
+      class="under down-arrow"
+      value="2"
+      (click)="nextL(this.fifthColumn)"
+      #downButtonFifthColumn
+    ></button>
+  </div>
+</div>
+<div>
+  <button (click)="submit()">Submit</button>
+</div>
