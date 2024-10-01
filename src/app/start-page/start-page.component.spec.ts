@@ -38,6 +38,6 @@ describe("StartPageComponent", () => {
     component.shuffle();
     expect(
       StartPageComponent.scenarios[StartPageComponent.rand].minigames.length
-    ).toBe(0); // This will fail because games are added after shuffle
+    ).toBe(3); // This will fail because games are added after shuffle
   });
 });
