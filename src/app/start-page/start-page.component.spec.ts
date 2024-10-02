@@ -34,7 +34,7 @@ describe("StartPageComponent", () => {
   });
 
   // Test 3 (should fail)
-  it("should remove all minigames from the scenario after shuffle is called", () => {
+  it("should remove all minigames from the scenario after shuffle is called balabasdlsal", () => {
     component.shuffle();
     expect(
       StartPageComponent.scenarios[StartPageComponent.rand].minigames.length
